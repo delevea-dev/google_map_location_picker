@@ -236,12 +236,12 @@ class MapPickerState extends State<MapPicker> {
                         ],
                       ),
                       builder: (context, data) {
-                        _address = data["address"];
-                        _placeId = data["placeId"];
+                        _address = data["address"] + ' asdasdasdsad';
+                        _placeId = data["placeId"] + ' asdasdasdsad';
                         return Text(
                           _address ??
                               S.of(context)?.unnamedPlace ??
-                              'Unnamed place',
+                              'Unnamed place is here',
                           style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600),
                         );
                       },
