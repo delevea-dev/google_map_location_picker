@@ -77,6 +77,7 @@ class SearchInputState extends State<SearchInput> {
           Expanded(
             child: TextField(
               controller: editController,
+              style: TextStyle( fontSize: 13.0, fontWeight: FontWeight.w500),
               decoration: InputDecoration(
                 hintText: widget.hintText ??
                     S.of(context)?.search_place ??
