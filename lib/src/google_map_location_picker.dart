@@ -119,7 +119,7 @@ class LocationPickerState extends State<LocationPicker> {
 
     overlayEntry = OverlayEntry(
       builder: (context) => Positioned(
-        top: 160,
+        top: 140,
         width: size.width,
         child: Material(
             elevation: 1,
@@ -252,7 +252,7 @@ class LocationPickerState extends State<LocationPicker> {
     overlayEntry = OverlayEntry(
       builder: (context) => Positioned(
         width: size.width,
-        top: 160,
+        top: 140,
         child: Material(
           elevation: 1,
           child: Column(
