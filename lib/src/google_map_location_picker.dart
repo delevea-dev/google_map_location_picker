@@ -406,38 +406,36 @@ class LocationPickerState extends State<LocationPicker> {
                     color: Colors.white70),
               ),
               backgroundColor: Colors.greenAccent),
-          body: Stack(
+          body: Column(
             children: [
-              Positioned(
-                  top: 50.0,
-                  width: 300,
-                  height: 40.0,
-                  child: SearchInput(
-                    (input) => searchPlace(input),
-                    key: searchInputKey,
-                    boxDecoration: widget.searchBarBoxDecoration,
-                    hintText: widget.hintText,
-                  )),
-              MapPicker(
-                widget.apiKey,
-                initialCenter: widget.initialCenter,
-                initialZoom: widget.initialZoom,
-                requiredGPS: widget.requiredGPS,
-                myLocationButtonEnabled: widget.myLocationButtonEnabled,
-                layersButtonEnabled: widget.layersButtonEnabled,
-                automaticallyAnimateToCurrentLocation:
-                    widget.automaticallyAnimateToCurrentLocation,
-                mapStylePath: widget.mapStylePath,
-                appBarColor: widget.appBarColor,
-                searchBarBoxDecoration: widget.searchBarBoxDecoration,
+              SearchInput(
+                (input) => searchPlace(input),
+                key: searchInputKey,
+                boxDecoration: widget.searchBarBoxDecoration,
                 hintText: widget.hintText,
-                resultCardConfirmIcon: widget.resultCardConfirmIcon,
-                resultCardAlignment: widget.resultCardAlignment,
-                resultCardDecoration: widget.resultCardDecoration,
-                resultCardPadding: widget.resultCardPadding,
-                key: mapKey,
-                language: widget.language,
-                desiredAccuracy: widget.desiredAccuracy,
+              ),
+              Expanded(
+                child: MapPicker(
+                  widget.apiKey,
+                  initialCenter: widget.initialCenter,
+                  initialZoom: widget.initialZoom,
+                  requiredGPS: widget.requiredGPS,
+                  myLocationButtonEnabled: widget.myLocationButtonEnabled,
+                  layersButtonEnabled: widget.layersButtonEnabled,
+                  automaticallyAnimateToCurrentLocation:
+                      widget.automaticallyAnimateToCurrentLocation,
+                  mapStylePath: widget.mapStylePath,
+                  appBarColor: widget.appBarColor,
+                  searchBarBoxDecoration: widget.searchBarBoxDecoration,
+                  hintText: widget.hintText,
+                  resultCardConfirmIcon: widget.resultCardConfirmIcon,
+                  resultCardAlignment: widget.resultCardAlignment,
+                  resultCardDecoration: widget.resultCardDecoration,
+                  resultCardPadding: widget.resultCardPadding,
+                  key: mapKey,
+                  language: widget.language,
+                  desiredAccuracy: widget.desiredAccuracy,
+                ),
               )
             ],
           ),
