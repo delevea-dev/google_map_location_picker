@@ -391,24 +391,33 @@ class LocationPickerState extends State<LocationPicker> {
         return Scaffold(
           extendBodyBehindAppBar: false,
           appBar: AppBar(
-            elevation: 0,
-            centerTitle: true,
-            automaticallyImplyLeading: false,
-            // iconTheme: Theme.of(context).iconTheme,
-            // elevation: 0,
-            // backgroundColor: widget.appBarColor,
-            // key: appBarKey,
-            title: Text("Find your delivery point", style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w600),),
-            backgroundColor: Colors.greenAccent
-          ),
+              elevation: 0,
+              centerTitle: true,
+              // automaticallyImplyLeading: false,
+              // iconTheme: Theme.of(context).iconTheme,
+              // elevation: 0,
+              // backgroundColor: widget.appBarColor,
+              // key: appBarKey,
+              title: Text(
+                "Find your delivery point",
+                style: TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white70),
+              ),
+              backgroundColor: Colors.greenAccent),
           body: Stack(
             children: [
-              SearchInput(
-                (input) => searchPlace(input),
-                key: searchInputKey,
-                boxDecoration: widget.searchBarBoxDecoration,
-                hintText: widget.hintText,
-              ),
+              Positioned(
+                  top: 50.0,
+                  width: 300,
+                  height: 40.0,
+                  child: SearchInput(
+                    (input) => searchPlace(input),
+                    key: searchInputKey,
+                    boxDecoration: widget.searchBarBoxDecoration,
+                    hintText: widget.hintText,
+                  )),
               MapPicker(
                 widget.apiKey,
                 initialCenter: widget.initialCenter,
