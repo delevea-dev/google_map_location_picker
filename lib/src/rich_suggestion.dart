@@ -15,7 +15,7 @@ class RichSuggestion extends StatelessWidget {
         onTap: onTap,
         child: Container(
             margin: EdgeInsets.all(5),
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
             child: Row(
               children: <Widget>[
                 Expanded(

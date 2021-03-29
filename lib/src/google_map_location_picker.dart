@@ -167,7 +167,7 @@ class LocationPickerState extends State<LocationPicker> {
     var endpoint =
         "https://maps.googleapis.com/maps/api/place/autocomplete/json?" +
             "key=${widget.apiKey}&" +
-            "input={$place}$regionParam&sessiontoken=$sessionToken&" +
+            "input={$place}&types=(cities)&components=country:in&sessiontoken=$sessionToken&" +
             "language=${widget.language}";
 
     if (locationResult != null) {
