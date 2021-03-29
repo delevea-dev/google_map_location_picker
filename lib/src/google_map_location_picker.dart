@@ -119,30 +119,32 @@ class LocationPickerState extends State<LocationPicker> {
 
     overlayEntry = OverlayEntry(
       builder: (context) => Positioned(
-        top: 100,
+        top: 600.0,
         width: size.width,
         child: Material(
-          elevation: 1,
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-            child: Row(
-              children: <Widget>[
-                SizedBox(
-                  height: 24,
-                  width: 24,
-                  child: CircularProgressIndicator(strokeWidth: 3),
+            elevation: 1,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                child: Row(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 24,
+                      width: 24,
+                      child: CircularProgressIndicator(strokeWidth: 3),
+                    ),
+                    SizedBox(width: 24),
+                    Expanded(
+                      child: Text(
+                        S.of(context)?.finding_place ?? 'Finding place...',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(width: 24),
-                Expanded(
-                  child: Text(
-                    S.of(context)?.finding_place ?? 'Finding place...',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
+              ),
+            )),
       ),
     );
 
