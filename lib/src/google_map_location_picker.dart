@@ -112,15 +112,15 @@ class LocationPickerState extends State<LocationPicker> {
 
     if (place.length < 1) return;
 
-    final RenderBox renderBox = context.findRenderObject();
-    Size size = renderBox.size;
+    // final RenderBox renderBox = context.findRenderObject();
+    // Size size = renderBox.size;
 
-    final RenderBox appBarBox = appBarKey.currentContext.findRenderObject();
+    // final RenderBox appBarBox = appBarKey.currentContext.findRenderObject();
 
     overlayEntry = OverlayEntry(
       builder: (context) => Positioned(
-        top: appBarBox.size.height,
-        width: size.width,
+        top: 0,
+        width: 300,
         child: Material(
           elevation: 1,
           child: Container(
@@ -392,15 +392,16 @@ class LocationPickerState extends State<LocationPicker> {
           extendBodyBehindAppBar: false,
           appBar: AppBar(
             elevation: 0,
+            centerTitle: true,
             automaticallyImplyLeading: false,
             // iconTheme: Theme.of(context).iconTheme,
             // elevation: 0,
             // backgroundColor: widget.appBarColor,
             // key: appBarKey,
-            title: Text("Find your delivery point", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700),),
+            title: Text("Find your delivery point", style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w600),),
             backgroundColor: Colors.greenAccent
           ),
-          body: Column(
+          body: Stack(
             children: [
               SearchInput(
                 (input) => searchPlace(input),

@@ -236,13 +236,13 @@ class MapPickerState extends State<MapPicker> {
                         ],
                       ),
                       builder: (context, data) {
-                        _address = data["address"] + ' asdasdasdsad';
-                        _placeId = data["placeId"] + ' asdasdasdsad';
+                        _address = data["address"];
+                        _placeId = data["placeId"];
                         return Text(
                           _address ??
                               S.of(context)?.unnamedPlace ??
-                              'Unnamed place is here',
-                          style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600),
+                              'Unnamed place',
+                          style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, height: 1.2),
                         );
                       },
                     ),
@@ -297,7 +297,7 @@ class MapPickerState extends State<MapPicker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(Icons.place, size: 56),
+            Icon(Icons.place_rounded, size: 56, color: Colors.green,),
             Container(
               decoration: ShapeDecoration(
                 shadows: [
